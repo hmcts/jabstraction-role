@@ -1,0 +1,20 @@
+# /etc/systemd/system/jabstraction.service
+[Unit]
+Description=Jabstraction service
+After=network.target
+
+[Service]
+Environment=http_proxy=
+Environment=https_proxy=
+Environment=no_proxy=
+
+Type=simple
+User=jenkinspush
+Group=jenkinspush
+WorkingDirectory=/home/jenkinspush/jabstraction
+ExecStart=/usr/local/bin/ruby /home/jenkinspush/jabstraction/main.rb
+Restart=on-failure
+TimeoutSec=10
+
+[Install]
+WantedBy=multi-user.target

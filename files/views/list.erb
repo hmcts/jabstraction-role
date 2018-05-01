@@ -1,0 +1,29 @@
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+
+<div class="jumbotron">
+  <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Version</th>
+                  <th>Status</th>
+                  <th>Build</th>
+              </tr>
+          </thead>
+          <tbody>
+    <% @jobs.each do |build| %>
+    <%
+    status = @client.job.get_current_build_status(build)
+    curnumber = @client.job.get_current_build_number(build)
+    %>
+      <tr>
+        <td><%= build %></td>
+        <td><%= curnumber %></td>
+        <td><%= status%></td>
+        <td><a class="btn btn-large btn-info" href="/build/<%= build %>" >Build</a></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+</div>

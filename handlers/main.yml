@@ -1,0 +1,6 @@
+---
+- name: restart jabstraction
+  service:
+    name: jabstraction
+    state: restarted
+  listen: "restart jabstraction"

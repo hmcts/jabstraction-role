@@ -1,0 +1,13 @@
+---
+- hosts: all
+  vars:
+    jenkins_user: "foo"
+    jenkins_password: "bar"
+    fridam_docker_password: "foobar"
+  pre_tasks:
+    - name: Add jenkinspush for testing
+      user:
+        name: jenkinspush
+        state: present
+  roles:
+    - role: jabstraction-role

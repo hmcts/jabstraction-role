@@ -1,0 +1,14 @@
+---
+#
+# ldap_user_name:
+#   jenkins_job_name: (take it from the url if you're not sure)
+#     parameter_1: "foo"
+#     parameter_2: 0
+#   another_jenkins_job_with_no_params: []
+#
+
+samn:
+  sam-test:
+    env: stage
+    boop: true
+  bill: []
