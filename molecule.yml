@@ -5,7 +5,7 @@ driver:
   name: docker
 docker:
   containers:
-    - name: jabstraction-${BRANCH_NAME}-${BUILD_NUMBER}
+    - name: jonkins-${BRANCH_NAME}-${BUILD_NUMBER}
       image: centos/systemd
       image_version: latest
       build_image: yes

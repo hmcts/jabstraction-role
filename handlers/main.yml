@@ -1,6 +1,6 @@
 ---
-- name: restart jabstraction
+- name: restart jonkins
   service:
-    name: jabstraction
+    name: jonkins
     state: restarted
-  listen: "restart jabstraction"
+  listen: "restart jonkins"

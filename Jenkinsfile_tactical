@@ -1,14 +1,14 @@
 #!groovy
 
 properties(
-  [[$class: 'GithubProjectProperty', projectUrlStr: 'https://github.com/hmcts/jabstraction-role/'],
+  [[$class: 'GithubProjectProperty', projectUrlStr: 'https://github.com/hmcts/jonkins-role/'],
    pipelineTriggers([[$class: 'GitHubPushTrigger']])]
 )
 
 @Library('Reform') _
 
 node {
-  ws('jabstraction-role') { // This must be the name of the role otherwise ansible won't find the role
+  ws('jonkins-role') { // This must be the name of the role otherwise ansible won't find the role
     try {
       wrap([$class: 'AnsiColorBuildWrapper', colorMapName: 'xterm']) {
         stage('Checkout') {

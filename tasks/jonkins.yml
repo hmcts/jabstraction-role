@@ -18,13 +18,13 @@
     group: jenkinspush
     mode: 0755
   with_items:
-    - /home/jenkinspush/jabstraction/public
-    - /home/jenkinspush/jabstraction/views
+    - /home/jenkinspush/jonkins/public
+    - /home/jenkinspush/jonkins/views
 
 - name: Move main chunk of ruby into place
   copy:
     src: main.rb
-    dest: /home/jenkinspush/jabstraction/main.rb
+    dest: /home/jenkinspush/jonkins/main.rb
     owner: jenkinspush
     group: jenkinspush
     mode: 0644
@@ -32,7 +32,7 @@
 - name: Move view files into place
   copy:
     src: "views/{{ item }}"
-    dest: /home/jenkinspush/jabstraction/views/{{ item }}
+    dest: /home/jenkinspush/jonkins/views/{{ item }}
     owner: jenkinspush
     group: jenkinspush
     mode: 0644
@@ -44,26 +44,26 @@
 - name: template env/config in
   template:
     src: "{{ item }}"
-    dest: /home/jenkinspush/jabstraction/{{ item }}
+    dest: /home/jenkinspush/jonkins/{{ item }}
     owner: jenkinspush
     group: jenkinspush
     mode: 0644
-  notify: restart jabstraction
+  notify: restart jonkins
   with_items:
     - config.yml
     - env.rb
 
 - name: Add unit file
   copy:
-    src: jabstraction.service
-    dest: /etc/systemd/system/jabstraction.service
+    src: jonkins.service
+    dest: /etc/systemd/system/jonkins.service
     owner: root
     group: root
     mode: 0644
 
 - name: Start/enable it
   systemd:
-    name: jabstraction
+    name: jonkins
     state: started
     enabled: true
     daemon_reload: yes

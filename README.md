@@ -1,4 +1,4 @@
-# jabstraction
+# jonkins
 
 Required abstraction layer that sits atop Jenkins, allowing limited access
 to specified jobs.
@@ -21,13 +21,13 @@ exampleusername01:
     SSH_KEY_FILE: /var/home/jenkinspush/.ssh/id_rsa
     SSH_PORT: 2332
 ```
-Above example would allow `exampleusername01` to run `bootstrap` job  with sufficient parameters to bootstrap the jabstraction server.
+Above example would allow `exampleusername01` to run `bootstrap` job  with sufficient parameters to bootstrap the jonkins server.
 
 Providing the incorrect/wrong/not enough parameters will result in internal server error, as will most errors.
 
-Run ansible management (Steal tags from above example) to deploy config and reload jabstraction.
+Run ansible management (Steal tags from above example) to deploy config and reload jonkins.
 
-Access at https://jabstraction.example.com
+Access at https://jonkins.example.com
 
 Log in with your ldap user.
 

@@ -1,4 +1,4 @@
 ---
 - include: rvm.yml
 - include: ruby.yml
-- include: jabstraction.yml
+- include: jonkins.yml
