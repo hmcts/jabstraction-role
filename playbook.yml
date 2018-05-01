@@ -10,4 +10,4 @@
         name: jenkinspush
         state: present
   roles:
-    - role: jabstraction-role
+    - role: jonkins-role

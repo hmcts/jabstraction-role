@@ -57,7 +57,7 @@ end
 
 get '/list' do
   authorise!
-  @title = "Jabstraction"
+  @title = "Jonkins"
   @client = JenkinsApi::Client.new(:server_url => 'https://build.example.com', :ssl => 'true',
         :username => "#{ENV['jenkins_user']}", :password => "#{ENV['jenkins_password']}")
   all_jobs = @client.job.list_all
